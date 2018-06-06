@@ -1,0 +1,23 @@
+/*  LAYOUT STYLES  */
+
+h3 {
+  color: grey;
+  font-family: "Times New Roman", Times, serif;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+
+.container {
+  margin-top: 30px;
+  margin-left: 50px;
+}
+
+.box {
+  width: 400px;
+  height: 175px;
+  display: inline-block;
+  border: 1px solid lightgrey;
+  border-radius: 15px;
+  margin-right: 25px;
+  margin-bottom: 25px;
+}
