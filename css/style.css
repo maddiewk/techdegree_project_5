@@ -15,7 +15,7 @@ h3 {
 
 .box {
   width: 400px;
-  height: 125px;
+  height: 130px;
   display: inline-block;
   border: 1px solid #A3A3A3;
   border-radius: 10px;
@@ -25,6 +25,19 @@ h3 {
 }
 .box:hover {
   background-color: #DEDEDE;
+}
+
+.info {
+  display: inline-block;
+}
+
+.email,
+.location {
+    font-family: "Arial", sans-serif;
+    color: grey;
+    text-align: left;
+    margin-left: 59px;
+    margin-top: auto;
 }
 
 label {
@@ -40,4 +53,10 @@ label {
 
 .button {
   cursor: pointer;
+}
+
+img {
+  border-radius: 100%;
+  margin-left: 20px;
+  margin-bottom: 15px;
 }
