@@ -37,13 +37,13 @@ class Employee {
       <div class="modal">
         <img src="${this.picture.large}">
           <div>
-            <h3>${this.name.first} ${this.name.last}</h3>
+            <h3 class="name">${this.name.first} ${this.name.last}</h3>
             <p>${this.login.username}</p>
-            <p>${this.email}</p>
-            <p>${this.location.city}</p><br>
+            <p class="email">${this.email}</p>
+            <p class="location">${this.location.city}</p><br>
             <p>${this.cell}</p>
-            <p>${this.location.street} ${this.location.city},${this.location.state} ${this.location.postcode}</p>
-            <p>Birthday:${this.dob}</p>
+            <p class="location">${this.location.street} ${this.location.city},${this.location.state} ${this.location.postcode}</p>
+            <p class="birthday">Birthday:${this.dob}</p>
           </div>
       </div>
     `;
