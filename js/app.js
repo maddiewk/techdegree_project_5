@@ -33,8 +33,19 @@ class Employee {
   }
 
   createModalWindow() {
+    // get date
+    let date = this.dob.substring(0, 10);
+    const dateSplit = date.split("-");
+    let year = dateSplit[0][2] + dateSplit[0][3];
+    let month = dateSplit[1];
+    let day = dateSplit[2];
+    let finalDate = month + "/" + day + "/" + year;
+
     let window = `
       <div class="modal">
+      <div class="x">
+        <span class="close">X</span>
+      </div>
         <img src="${this.picture.large}">
           <div>
             <h3 class="name">${this.name.first} ${this.name.last}</h3>
@@ -43,7 +54,9 @@ class Employee {
             <p class="location">${this.location.city}</p><br>
             <p>${this.cell}</p>
             <p class="location">${this.location.street} ${this.location.city},${this.location.state} ${this.location.postcode}</p>
-            <p class="birthday">Birthday:${this.dob}</p>
+            <p class="birthday">Birthday: ${finalDate}</p>
+            <a href="#" class="prev">&lArr;</a>
+            <a href="#" class="next">&rArr;</a>
           </div>
       </div>
     `;
@@ -71,15 +84,16 @@ function appendEmployee() {
         employeeArray.push(empl);
       });
       employeeArray.map(employee => {
-        const square = employee.createDiv();
+        const square = employee.createModalWindow();
         $container.append(square);
       })
     });
 }
 appendEmployee();
 
-// function that takes all info and displays it to a modal window
-// call this function in a click function that responds to clicks anywhere on a box
+// click function that responds to clicks anywhere on a box
+// if clicked, show the employee for that specific box
+// create a separate function under appendEmployee
 
 
-console.log(employeeArray);
+// console.log(employeeArray);

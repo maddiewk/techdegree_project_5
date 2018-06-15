@@ -71,3 +71,12 @@ img {
   margin-top: 20px;
   margin-left: 15px;
 }
+
+.close:hover {
+  cursor: pointer;
+}
+
+.prev,
+.next {
+  text-decoration: none;
+}
