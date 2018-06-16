@@ -2,8 +2,7 @@
 const $container = $(".container");
 const $userInput = $("#search");
 const $searchButton = $(".button");
-let $employeeBox = $(".box");
-
+let myModal = document.getElementsByClassName("modal");
 
 // class constructor to create random employee
 class Employee {
@@ -32,10 +31,11 @@ class Employee {
     return div;
   }
 
+// create modal window for each employee
   createModalWindow() {
     // get date
     let date = this.dob.substring(0, 10);
-    const dateSplit = date.split("-");
+    let dateSplit = date.split("-");
     let year = dateSplit[0][2] + dateSplit[0][3];
     let month = dateSplit[1];
     let day = dateSplit[2];
@@ -53,7 +53,7 @@ class Employee {
             <p class="email">${this.email}</p>
             <p class="location">${this.location.city}</p><br>
             <p>${this.cell}</p>
-            <p class="location">${this.location.street} ${this.location.city},${this.location.state} ${this.location.postcode}</p>
+            <p class="location">${this.location.street} ${this.location.city}, ${this.location.state} ${this.location.postcode}</p>
             <p class="birthday">Birthday: ${finalDate}</p>
             <a href="#" class="prev">&lArr;</a>
             <a href="#" class="next">&rArr;</a>
@@ -84,16 +84,36 @@ function appendEmployee() {
         employeeArray.push(empl);
       });
       employeeArray.map(employee => {
-        const square = employee.createModalWindow();
+        const square = employee.createDiv();
+        const modalWindow = employee.createModalWindow();
         $container.append(square);
+        $container.append(modalWindow);
       })
+      // define event listener for each box
+
+      $(".box").on("click", function() {
+        alert("You clicked a box!");
+      })
+
+      
+      // employeeBox.addEventListener("click", function() {
+      //   alert("You clicked a box");
+      // });
+
     });
+
 }
 appendEmployee();
 
+console.log(employeeArray);
+
+
+$(".button").on("click", function() {
+  alert("You clicked the search button");
+});
+
+
 // click function that responds to clicks anywhere on a box
 // if clicked, show the employee for that specific box
-// create a separate function under appendEmployee
-
-
-// console.log(employeeArray);
+// create a separate click function under appendEmployee and call it
+// in the appendEmployee function?

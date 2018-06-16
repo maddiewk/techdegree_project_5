@@ -1,5 +1,6 @@
 /*  LAYOUT STYLES  */
 
+
 h3 {
   color: grey;
   font-family: "Arial", sans-serif;
@@ -79,4 +80,14 @@ img {
 .prev,
 .next {
   text-decoration: none;
+}
+
+.modal {
+  display: none;
+  z-index: 1;
+  margin: auto;
+  width: 25%;
+  height: 40%;
+  border: 1px solid white;
+  border-radius: 10px;
 }
