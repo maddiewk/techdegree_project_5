@@ -93,9 +93,14 @@ function appendEmployee() {
 
       $(".box").on("click", function() {
         alert("You clicked a box!");
-      })
+        $(".modal").css("display", "block");
+      });
 
-      
+      $(".close").on("click", function() {
+        $(".modal").css("display", "none");
+      });
+
+
       // employeeBox.addEventListener("click", function() {
       //   alert("You clicked a box");
       // });
