@@ -1,6 +1,5 @@
 /*  LAYOUT STYLES  */
 
-
 h3 {
   color: grey;
   font-family: "Arial", sans-serif;
@@ -86,8 +85,16 @@ img {
   display: none;
   z-index: 1;
   margin: auto;
-  width: 25%;
-  height: 40%;
+  overflow:auto;
+  width: 50%;
+  height: 50%;
+  margin: auto;
   border: 1px solid white;
   border-radius: 10px;
+  background-color: white;
+}
+
+.overlay {
+  z-index: 0;
+  color: grey;
 }

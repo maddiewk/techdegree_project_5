@@ -3,6 +3,7 @@ const $container = $(".container");
 const $employeeBox = $(".employees");
 const userInput = document.getElementById("#search");
 const searchButton = document.querySelector(".button");
+const $modalBox = $(".details");
 let myModal = document.getElementsByClassName("modal");
 
 const birthdayFormat = (bday) => {
@@ -39,7 +40,6 @@ class Employee {
   }
 
 }
-
 
 const createModalWindow = (profile) => {
 
@@ -90,18 +90,22 @@ function appendEmployee() {
         const modalWindow = createModalWindow(employee);
 
         $employeeBox.append(square);
-        $employeeBox.append(modalWindow);
+        $modalBox.append(modalWindow);
       })
+      
       // define event listener for each box
 
       // $(".box").on("click", function() {
-      //   alert("You clicked a box!");
-      //   $(".modal").css("display", "block");
+      //   $(this).css("display", "block");
       // });
-      //
-      // $(".close").on("click", function() {
-      //   $(".modal").css("display", "none");
-      // });
+
+      $(".box").on("click", function() {
+        console.log($(this).html());
+      });
+
+      $(".close").on("click", function() {
+        $(".modal").css("display", "none");
+      });
 
     });
 
@@ -109,10 +113,14 @@ function appendEmployee() {
 appendEmployee();
 
 
+//
+// $employeeBox.on("click", function(event) {
+//   // alert("HELLO");
+//   // event.target.style.display = "block";
+//   $(".modal").css("display", "block");
+// });
 
-$employeeBox.on("click", function(event) {
-  
-});
+// search button click function
 
 // $(".button").on("click", function() {
 //   alert("You clicked the search button");
