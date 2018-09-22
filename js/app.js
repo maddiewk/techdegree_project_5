@@ -1,16 +1,11 @@
 // global variables for HTML elements
 const $container = $(".container");
 const $employeeBox = $(".employees");
-const userInput = document.getElementById("#search");
-const searchButton = document.querySelector(".button");
+const userInput = document.getElementById("search");
+const $searchButton = $(".button");
 const $modalBox = $(".details");
-let myModal = document.getElementsByClassName("modal");
-
-const birthdayFormat = (bday) => {
-  // get date
-  let emplBday = bday.slice(0,10).split("-");
-  return `${emplBday[1]}/${emplBday[2]}/${emplBday[0].slice(2,4)}`;
-}
+const $closeButton = $(".close");
+const $myModal = $(".modal");
 
 // class constructor to create random employee
 class Employee {
@@ -43,22 +38,26 @@ class Employee {
 
 const createModalWindow = (profile) => {
 
+  const birthdayFormat = (bday) => {
+    // get date
+    let emplBday = bday.slice(0,10).split("-");
+    return `${emplBday[1]}/${emplBday[2]}/${emplBday[0].slice(2,4)}`;
+  }
+
   let window = `
     <div class="modal">
-    <div class="x">
-      <span class="close">X</span>
-    </div>
-      <img src="${profile.picture.large}">
-        <div>
+      <div class="modal_content">
+        <span class="close">&times;</span>
+        <img src="${profile.picture.large}">
           <h3 class="name">${profile.name.first} ${profile.name.last}</h3>
-          <p>${profile.login.username}</p>
-          <p class="email">${profile.email}</p>
-          <p class="location">${profile.location.city}</p><br>
-          <p>${profile.cell}</p>
-          <p class="location">${profile.location.street} ${profile.location.city}, ${profile.location.state} ${profile.location.postcode}</p>
-          <p class="birthday">Birthday: ${birthdayFormat(profile.dob.date)}</p>
-          <a href="#" class="prev">&lArr;</a>
-          <a href="#" class="next">&rArr;</a>
+            <p>${profile.login.username}</p>
+            <p class="email">${profile.email}</p>
+            <p class="location">${profile.location.city}</p><br>
+            <p>${profile.cell}</p>
+            <p class="location">${profile.location.street} ${profile.location.city}, ${profile.location.state} ${profile.location.postcode}</p>
+            <p class="birthday">Birthday: ${birthdayFormat(profile.dob.date)}</p>
+            <a href="#" class="prev">&lArr;</a>
+            <a href="#" class="next">&rArr;</a>
         </div>
     </div>
   `;
@@ -86,49 +85,48 @@ function appendEmployee() {
       });
       employeeArray.map(employee => {
         const square = employee.createDiv();
-        // const modalWindow = employee.createModalWindow();
         const modalWindow = createModalWindow(employee);
 
         $employeeBox.append(square);
         $modalBox.append(modalWindow);
       })
-      
-      // define event listener for each box
-
-      // $(".box").on("click", function() {
-      //   $(this).css("display", "block");
-      // });
-
-      $(".box").on("click", function() {
-        console.log($(this).html());
-      });
-
-      $(".close").on("click", function() {
-        $(".modal").css("display", "none");
-      });
 
     });
 
 }
 appendEmployee();
 
-
-//
-// $employeeBox.on("click", function(event) {
-//   // alert("HELLO");
-//   // event.target.style.display = "block";
-//   $(".modal").css("display", "block");
-// });
-
-// search button click function
-
-// $(".button").on("click", function() {
-//   alert("You clicked the search button");
-// });
-
-
-
 // click function that responds to clicks anywhere on a box
 // if clicked, show the employee for that specific box
 // create a separate click function under appendEmployee and call it
 // in the appendEmployee function?
+
+
+
+
+// define event listener for each box
+
+$(".box").on("click", function() {
+  alert("Yes");
+  $(this).css("display", "block");
+  // $myModal.style.display = "block";
+});
+
+// $(".close").on("click", function() {
+//   $(".modal").css("display", "none");
+// });
+
+
+
+
+
+// close button click handler
+// $closeButton.on("click", function() {
+//   $(".modal").css("display", "none");
+// })
+
+// search button click function
+
+$searchButton.on("click", function() {
+  alert("You clicked the search button");
+});

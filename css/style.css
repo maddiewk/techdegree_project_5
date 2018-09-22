@@ -81,18 +81,25 @@ img {
   text-decoration: none;
 }
 
-.modal {
-  display: none;
-  z-index: 1;
+/* .modal {
+  /* display: none; */
+  /* z-index: 1;
+  position: fixed;
   margin: auto;
   overflow:auto;
-  width: 50%;
-  height: 50%;
+  width: 100%;
+  height: 100%;
   margin: auto;
   border: 1px solid white;
-  border-radius: 10px;
-  background-color: white;
-}
+  border-radius: 10px; */
+  /* background-color: rgba(0, 0, 0, 0.5); */
+  /* opacity: 0; */
+/* }
+
+.modal_content {
+  position: absolute; */
+  /* background-color: white; */
+/* } */
 
 .overlay {
   z-index: 0;
