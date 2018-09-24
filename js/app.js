@@ -104,8 +104,12 @@ function appendEmployee() {
 
     $(".box").on("click", function() {
       $(this).next().show();
-      $(this).addClass("modal_content");
+      $(this).next().addClass("modal_content");
       $(".container").addClass("overlay");
+    });
+    $(".close").on("click", function() {
+      $(this).parent().hide();
+      $(".container").removeClass("overlay");
     });
 
     });

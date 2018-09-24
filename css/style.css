@@ -82,24 +82,20 @@ img {
 }
 
 .modal {
-  z-index: 1;
-  /* position: fixed; */
   overflow:auto;
-  width: 50%;
-  height: 50%;
+  /* width: 50%;
+  height: 50%; */
   margin: auto;
-  border: 1px solid white;
   border-radius: 10px;
-  /* background-color: rgba(0, 0, 0, 0.5); */
-  /* opacity: 0; */
 }
 
 .modal_content {
-  position: absolute;
   background-color: white;
+  width: 50%;
+  height: 50%;
 }
 
 .overlay {
-  z-index: 0;
-  color: grey;
+  background-color: lightgrey;
+  position: absolute;
 }
