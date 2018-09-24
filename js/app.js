@@ -1,11 +1,12 @@
 // global variables for HTML elements
 const $container = $(".container");
-const $employeeBox = $(".employees");
+// const $employeeBox = $(".employees");
 const userInput = document.getElementById("search");
 const $searchButton = $(".button");
-const $modalBox = $(".details");
+// const $modalBox = $(".details");
 const $closeButton = $(".close");
 const $myModal = $(".modal");
+const $details = $(".modal_content");
 
 // class constructor to create random employee
 class Employee {
@@ -87,46 +88,37 @@ function appendEmployee() {
         const square = employee.createDiv();
         const modalWindow = createModalWindow(employee);
 
-        $employeeBox.append(square);
-        $modalBox.append(modalWindow);
+        $container.append(square);
+        $container.append(modalWindow);
+
+        $(".modal").hide();
       })
+      //loop through the array that was just created to show various values for the different object keys
+    //   function captureCity() {
+    //   employeeArray.forEach((element, index, array) => {
+    //       console.log(element.location.city);
+    //       // console.log(index);
+    //       // console.log(array);
+    //   });
+    // }
+
+    $(".box").on("click", function() {
+      $(this).next().show();
+      $(this).addClass("modal_content");
+      $(".container").addClass("overlay");
+    });
 
     });
 
 }
 appendEmployee();
 
+
+
+
+
+
 // click function that responds to clicks anywhere on a box
 // if clicked, show the employee for that specific box
 // create a separate click function under appendEmployee and call it
 // in the appendEmployee function?
-
-
-
-
-// define event listener for each box
-
-$(".box").on("click", function() {
-  alert("Yes");
-  $(this).css("display", "block");
-  // $myModal.style.display = "block";
-});
-
-// $(".close").on("click", function() {
-//   $(".modal").css("display", "none");
-// });
-
-
-
-
-
-// close button click handler
-// $closeButton.on("click", function() {
-//   $(".modal").css("display", "none");
-// })
-
-// search button click function
-
-$searchButton.on("click", function() {
-  alert("You clicked the search button");
-});
