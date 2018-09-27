@@ -1,4 +1,5 @@
 // global variables for HTML elements
+const page = $("body");
 const $container = $(".container");
 // const $employeeBox = $(".employees");
 const userInput = document.getElementById("search");
@@ -6,7 +7,6 @@ const $searchButton = $(".button");
 // const $modalBox = $(".details");
 const $closeButton = $(".close");
 const $myModal = $(".modal");
-const $details = $(".modal_content");
 
 // class constructor to create random employee
 class Employee {
@@ -47,8 +47,7 @@ const createModalWindow = (profile) => {
 
   let window = `
     <div class="modal">
-      <div class="modal_content">
-        <span class="close">&times;</span>
+      <span class="close">&times;</span>
         <img src="${profile.picture.large}">
           <h3 class="name">${profile.name.first} ${profile.name.last}</h3>
             <p>${profile.login.username}</p>
@@ -59,7 +58,6 @@ const createModalWindow = (profile) => {
             <p class="birthday">Birthday: ${birthdayFormat(profile.dob.date)}</p>
             <a href="#" class="prev">&lArr;</a>
             <a href="#" class="next">&rArr;</a>
-        </div>
     </div>
   `;
   return window;
@@ -102,14 +100,43 @@ function appendEmployee() {
     //   });
     // }
 
+    function toggleModalWindow() {
+      // write code to switch between "normal" viewing page and modal page,
+      // then call this function using conditional statements in the click functions
+      // below?
+    }
+
+
     $(".box").on("click", function() {
       $(this).next().show();
-      $(this).next().addClass("modal_content");
-      $(".container").addClass("overlay");
+      $(".box").addClass("disabled");
+      $("body").addClass("overlay");
     });
+
     $(".close").on("click", function() {
       $(this).parent().hide();
-      $(".container").removeClass("overlay");
+      $(".box").removeClass("disabled");
+      $("body").removeClass("overlay");
+    });
+
+    $(".prev").on("click", function() {
+      let parent = $(this).parent();
+      parent.hide();
+      parent.prev().prev().show();
+    });
+
+    $(".next").on("click", function() {
+      let parent = $(this).parent(); // gets the modal window div currently displaying
+      let lastParent = employeeArray[11]; // gets the last modal window div in the list?
+      if ( parent ===  lastParent) {
+        console.log("Null!");
+        $(this).css('pointer-events', 'none');
+      } else {
+        console.log("Didn't work...");
+        parent.hide();
+        parent.next().next().show();
+      }
+
     });
 
     });
