@@ -127,29 +127,22 @@ function appendEmployee() {
 
     $(".next").on("click", function() {
       let parent = $(this).parent(); // gets the modal window div currently displaying
-      let lastParent = employeeArray[11]; // gets the last modal window div in the list?
-      if ( parent ===  lastParent) {
+      let lastParent = employeeArray[employeeArray.length - 1]; // gets the last modal window div in the list
+      if ( lastParent ) {
         console.log("Null!");
-        $(this).css('pointer-events', 'none');
+        $(this).css('pointer-events', 'none'); // doesn't work to disable the mouse click - find something else
       } else {
         console.log("Didn't work...");
         parent.hide();
         parent.next().next().show();
       }
-
     });
+
+    // search bar function below:
+
+    
 
     });
 
 }
 appendEmployee();
-
-
-
-
-
-
-// click function that responds to clicks anywhere on a box
-// if clicked, show the employee for that specific box
-// create a separate click function under appendEmployee and call it
-// in the appendEmployee function?
