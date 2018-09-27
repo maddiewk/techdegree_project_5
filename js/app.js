@@ -90,13 +90,6 @@ function appendEmployee() {
       });
 
 
-    // function toggleModalWindow() {
-    //   write code to switch between "normal" viewing page and modal page,
-    //   then call this function using conditional statements in the click functions
-    //   below?
-    // }
-
-
     $(".box").on("click", function() {
       $(this).next().show();
       $(".box").addClass("disabled");
@@ -109,26 +102,25 @@ function appendEmployee() {
       $("body").removeClass("overlay");
     });
 
-    $(".prev").on("click", function() {
-      let parent = $(this).parent();
-      parent.hide();
-      parent.prev().prev().show();
-    });
+
+    $(".modal:eq(11) > .next").addClass("disabled");
 
     $(".next").on("click", function() {
       let parent = $(this).parent(); // gets the modal window div currently displaying
-      // let lastParent = employeeArray[employeeArray.length - 1]; // gets the last modal window div in the list?
-      // if ( lastParent ) {
-      //   console.log("Null!");
-      //   $(this).css('pointer-events', 'none'); // doesn't work to disable the mouse click - find something else
-      // } else {
-      //   console.log("Didn't work...");
         parent.hide();
         parent.next().next().show();
-      })
-    // });
+    });
 
-    // search bar function below
+    $(".modal:eq(0) > .prev").addClass("disabled");
+
+    $(".prev").on("click", function() {
+      let parent = $(this).parent();
+        parent.hide();
+        parent.prev().prev().show();
+    });
+
+
+    // search bar function that responds to usernames or names
 
     $userInput.on('keyup', function(){
       let userSearch = $userInput.val().toLowerCase();
@@ -153,8 +145,7 @@ function appendEmployee() {
 
     });
 
-
-    });
+  });
 
 }
 appendEmployee();
