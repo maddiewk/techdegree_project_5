@@ -43,15 +43,16 @@ class Employee {
 
   let window = `
     <div class="modal">
-        <img src="${this.picture.large}">
+        <img src="${this.picture.large}" id="modal_img">
         <span class="close">X</span>
-          <h3>${this.name.first} ${this.name.last}</h3>
-            <p class="username">${this.login.username}</p>
-            <p class="email">${this.email}</p>
-            <p class="location">${this.location.city}</p><br>
+          <h3 class= "modal_name">${this.name.first} ${this.name.last}</h3>
+            <p class="modal_username">${this.login.username}</p>
+            <p class="modal_email">${this.email}</p>
+            <p class="modal_location">${this.location.city}</p><br>
+            <hr>
             <p>${this.cell}</p>
-            <p class="location">${this.location.street} ${this.location.city}, ${this.location.state} ${this.location.postcode}</p>
-            <p class="birthday">Birthday: ${birthdayFormat(this.dob.date)}</p>
+            <p class="modal_location">${this.location.street} ${this.location.city}, ${this.location.state} ${this.location.postcode}</p>
+            <p class="modal_birthday">Birthday: ${birthdayFormat(this.dob.date)}</p>
             <a href="#" class="prev">&lArr;</a>
             <a href="#" class="next">&rArr;</a>
     </div>
