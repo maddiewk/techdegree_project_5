@@ -1,7 +1,7 @@
 /*  LAYOUT STYLES  */
 
 h3 {
-  color: grey;
+  /* color: grey; */
   font-family: "Arial", sans-serif;
   margin-left: 20px;
   margin-top: 20px;
@@ -32,8 +32,9 @@ h3 {
   text-align: left;
 }
 
-.name {
-  color: #8F8F8F;
+.name,
+.modal_name {
+  color: #707070;
 }
 
 .location,
@@ -101,8 +102,8 @@ img {
   position: absolute;
   top: 50%;
   left: 50%;
-  /* height: 435px;
-  width: 370px;*/
+  height: 550px;
+  width: 370px;
   padding: 5px 30px 5px 30px;
   border-radius: 10px;
   transform: translate(-50%, -50%);
@@ -113,11 +114,19 @@ img {
   text-align: center;
   display: block;
   text-transform: capitalize;
-  margin-left: auto;
-  margin-right: auto;
+  margin-top: 190px;
+  font-family: "Arial", sans-serif;
+  color: #C2C2C2;
+  /* margin-left: auto;
+  margin-right: auto; */
 }
 
 .modal_img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -240px;
+  margin-left: -45px;
   text-align: center;
   display: block;
 }
