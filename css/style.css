@@ -1,7 +1,7 @@
 /*  LAYOUT STYLES  */
 
 h3 {
-  /* color: grey; */
+  color: #707070;
   font-family: "Arial", sans-serif;
   margin-left: 20px;
   margin-top: 20px;
@@ -9,18 +9,19 @@ h3 {
 }
 
 .container {
-  margin-top: 30px;
-  margin-left: 20px;
+  padding: 5px 5px 5px 5px; /*?*/
+  /* margin-left: .5em;
+  margin-right: .5em; */
 }
 
 .box {
   width: 420px;
-  height: 130px;
+  height: 125px;
   display: inline-block;
   border: 2px solid #EEEEEE;
   border-radius: 10px;
-  margin-right: 15px;
   margin-bottom: 10px;
+  margin-left: 25px;
   cursor: pointer;
 }
 .box:hover {
@@ -54,7 +55,7 @@ label {
   font-family: "Arial", sans-serif;
   color: grey;
   display: inline-block;
-  margin-left: 465px;
+  margin-left: 595px;
 }
 
 #search {
@@ -96,14 +97,16 @@ img {
 .arrow_buttons {
   text-decoration: none;
   text-align: center;
+  border: 5px solid black;
+  padding-top: 10px;
 }
 
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
-  height: 535px;
-  width: 390px;
+  height: 495px;
+  width: 380px;
   padding: 5px 30px 5px 30px;
   border-radius: 10px;
   transform: translate(-50%, -50%);
@@ -114,19 +117,14 @@ img {
   text-align: center;
   display: block;
   text-transform: capitalize;
-  margin-top: 190px;
   font-family: "Arial", sans-serif;
   color: #C2C2C2;
-  /* margin-left: auto;
-  margin-right: auto; */
+}
+
+.pic_wrap {
+  text-align: center;
 }
 
 .modal_img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: -240px;
-  margin-left: -45px;
-  text-align: center;
-  display: block;
+  float: none;
 }
