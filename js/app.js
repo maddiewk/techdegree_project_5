@@ -97,14 +97,14 @@ function appendEmployee() {
   //click function to bring up modal window
     $(".box").on("click", function() {
       $(this).next().show();
-      $("#search, .button, .box").addClass("disabled");
+      $("#search, .box").addClass("disabled");
       $("body").addClass("overlay");
     });
 
   // click function to close modal window
     $(".close").on("click", function() {
       $(this).parent().hide();
-      $("#search, .button, .box").removeClass("disabled");
+      $("#search, .box").removeClass("disabled");
       $("body").removeClass("overlay");
     });
 

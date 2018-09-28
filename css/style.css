@@ -9,13 +9,12 @@ h3 {
 }
 
 .container {
-  padding: 5px 5px 5px 5px; /*?*/
-  /* margin-left: .5em;
-  margin-right: .5em; */
+  padding-top: 15px;
+  padding-left: 20px;
 }
 
 .box {
-  width: 420px;
+  width: 400px;
   height: 125px;
   display: inline-block;
   border: 2px solid #EEEEEE;
@@ -55,15 +54,11 @@ label {
   font-family: "Arial", sans-serif;
   color: grey;
   display: inline-block;
-  margin-left: 595px;
+  margin-left: 575px;
 }
 
 #search {
   margin-left: 7px;
-}
-
-.button {
-  cursor: pointer;
 }
 
 img {
@@ -73,7 +68,6 @@ img {
   margin-top: 20px;
   margin-left: 15px;
 }
-
 
 .disabled {
   pointer-events: none;
@@ -97,7 +91,6 @@ img {
 .arrow_buttons {
   text-decoration: none;
   text-align: center;
-  border: 5px solid black;
   padding-top: 10px;
 }
 
@@ -106,7 +99,7 @@ img {
   top: 50%;
   left: 50%;
   height: 495px;
-  width: 380px;
+  width: 400px;
   padding: 5px 30px 5px 30px;
   border-radius: 10px;
   transform: translate(-50%, -50%);
