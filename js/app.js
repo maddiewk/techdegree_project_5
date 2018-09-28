@@ -130,7 +130,7 @@ function appendEmployee() {
     $userInput.on('keyup', function(){
       let userSearch = $userInput.val().toLowerCase();
       let names = $('.name');
-      let username = $('.username');
+      let username = $('.modal_username');
 
       for (i = 0; i < names.length; i += 1) {
         if ( names[i].innerHTML.indexOf(userSearch) > -1 ) {
