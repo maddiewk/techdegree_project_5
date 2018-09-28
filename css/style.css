@@ -92,36 +92,37 @@ img {
   cursor: pointer;
 }
 
-.prev,
-.next {
+.arrow_buttons {
   text-decoration: none;
-  display: inline-block;
-  margin-left: auto;
-  margin-right: auto;
+  text-align: center;
 }
 
 .modal {
   position: absolute;
-  top: 46%;
+  top: 50%;
   left: 50%;
-  height: 435px;
-  width: 370px;
+  /* height: 435px;
+  width: 370px;*/
   padding: 5px 30px 5px 30px;
   border-radius: 10px;
   transform: translate(-50%, -50%);
   background-color: white;
 }
 
-#modal_img {
+.modal_details {
+  text-align: center;
+  border: 5px solid black;
+  /* margin-left: auto;
+  margin-right: auto; */
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 40%;
+  text-transform: capitalize;
+
 }
 
-.modal_name,
-.modal_username,
-.modal_email,
-.modal_location {
+.modal_img {
+  text-align: center;
   display: block;
+  border: 5px solid black;
+  /* margin-left: 0, auto;
+  margin-right: 0, auto; */
 }

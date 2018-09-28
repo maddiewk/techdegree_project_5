@@ -43,9 +43,10 @@ class Employee {
 
   let window = `
     <div class="modal">
-        <img src="${this.picture.large}" id="modal_img">
+        <img class="modal_img" src="${this.picture.large}">
         <span class="close">X</span>
-          <h3 class= "modal_name">${this.name.first} ${this.name.last}</h3>
+        <div class="modal_details">
+            <h3 class= "modal_name">${this.name.first} ${this.name.last}</h3>
             <p class="modal_username">${this.login.username}</p>
             <p class="modal_email">${this.email}</p>
             <p class="modal_location">${this.location.city}</p><br>
@@ -53,8 +54,11 @@ class Employee {
             <p>${this.cell}</p>
             <p class="modal_location">${this.location.street} ${this.location.city}, ${this.location.state} ${this.location.postcode}</p>
             <p class="modal_birthday">Birthday: ${birthdayFormat(this.dob.date)}</p>
+          </div>
+          <div class="arrow_buttons">
             <a href="#" class="prev">&lArr;</a>
             <a href="#" class="next">&rArr;</a>
+          </div>
     </div>
   `;
   return window;
@@ -93,29 +97,29 @@ function appendEmployee() {
 
     $(".box").on("click", function() {
       $(this).next().show();
-      $(".box").addClass("disabled");
+      $("#search, .button, .box").addClass("disabled");
       $("body").addClass("overlay");
     });
 
     $(".close").on("click", function() {
       $(this).parent().hide();
-      $(".box").removeClass("disabled");
+      $("#search, .button, .box").removeClass("disabled");
       $("body").removeClass("overlay");
     });
 
 
-    $(".modal:eq(11) > .next").addClass("disabled");
+    $(".arrow_buttons:eq(11) > .next").addClass("disabled");
 
     $(".next").on("click", function() {
-      let parent = $(this).parent(); // gets the modal window div currently displaying
+      let parent = $(this).parent().parent(); // gets the modal window div currently displaying
         parent.hide();
         parent.next().next().show();
     });
 
-    $(".modal:eq(0) > .prev").addClass("disabled");
+    $(".arrow_buttons:eq(0) > .prev").addClass("disabled");
 
     $(".prev").on("click", function() {
-      let parent = $(this).parent();
+      let parent = $(this).parent().parent();
         parent.hide();
         parent.prev().prev().show();
     });
