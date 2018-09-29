@@ -37,7 +37,7 @@ class Employee {
   const birthdayFormat = (bday) => {
     // get date
     let emplBday = bday.slice(0,10).split("-");
-    return `${emplBday[1]}/${emplBday[2]}/${emplBday[0].slice(2,4)}`;
+    return `${emplBday[1]}/${emplBday[2]}/${emplBday[0].slice(0,4)}`; // 1991
   }
 
   let window = `
@@ -56,8 +56,8 @@ class Employee {
             <p class="modal_birthday">Birthday: ${birthdayFormat(this.dob.date)}</p>
           </div>
           <div class="arrow_buttons">
-            <a href="#" class="prev">&lArr;</a>
-            <a href="#" class="next">&rArr;</a>
+            <a href="#" class="prev">&#x21e6;</a>
+            <a href="#" class="next">&#x21e8;</a>
           </div>
     </div>
   `;
